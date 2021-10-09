@@ -5,12 +5,14 @@ using UnityEngine.UI;
 
 public class IndustryInfoItem : MonoBehaviour
 {
+    public Company company;
     public Image companyImage;
     public Text companyName;
     public Text typeText;
     public Text price;
 
     public void Init(Company company) {
+        this.company = company;
         companyImage.sprite = company.icon;
         companyName.text = company._name;
         var randomValue = Random.value;
