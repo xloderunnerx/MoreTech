@@ -23,6 +23,8 @@ MonoBehaviour:
     SerializationNodes: []
   _name: "\u0422\u0440\u0430\u043D\u0441\u043D\u0435\u0444\u0442\u044C"
   icon: {fileID: 21300000, guid: e37e2c8758f2e0948bf829305b6bab1c, type: 3}
+  haveStocks: 1
   stocksPrice: 0
+  haveBonds: 1
   bondsPrice: 0
   bondsPassive: 0

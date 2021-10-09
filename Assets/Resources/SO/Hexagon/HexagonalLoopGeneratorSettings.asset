@@ -17,6 +17,7 @@ MonoBehaviour:
     SerializedBytes: 
     ReferencedUnityObjects:
     - {fileID: 1209217001359309020, guid: 818818a26ce10e549a44533a24fa6c33, type: 3}
+    - {fileID: 11400000, guid: ee196c964174dcd43be6b4802fa4afbe, type: 2}
     SerializedBytesString: 
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
@@ -31,6 +32,9 @@ MonoBehaviour:
     - Name: circleRadius
       Entry: 3
       Data: 6
+    - Name: industryList
+      Entry: 10
+      Data: 1
     - Name: 
       Entry: 8
       Data: 

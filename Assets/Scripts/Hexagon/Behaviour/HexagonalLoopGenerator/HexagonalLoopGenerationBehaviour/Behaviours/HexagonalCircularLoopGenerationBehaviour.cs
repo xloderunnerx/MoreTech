@@ -14,6 +14,8 @@ namespace Hexagon.Behaviour {
     public class HexagonalCircularLoopGenerationBehaviour : IHexagonalLoopGenerationBehaviour {
         [OdinSerialize] private GameObject hexPrefab;
         [OdinSerialize] private int circleRadius;
+        [OdinSerialize] private IndustryList industryList;
+
         public List<Hex> Generate(DiContainer diContainer, HexagonalLoopGeneratorData data, HexagonalLoopGeneratorSettings settings) {
             var result = new List<Hex>();
             var oddRadius = circleRadius * 2 + 1;
@@ -42,6 +44,7 @@ namespace Hexagon.Behaviour {
             result.Clear();
             result = smartRandomizedSortedLoop;
             SinDisplacement(smartRandomizedSortedLoop);
+            AssignIndastries(smartRandomizedSortedLoop); ;
             return result;
         }
 
@@ -118,5 +121,11 @@ namespace Hexagon.Behaviour {
             }
         }
         
+        public void AssignIndastries(List<Hex> loop) {
+            loop.ForEach(h => {
+                var randomIndustry = industryList.Industries[Random.Range(0, industryList.Industries.Count)];
+                h.InitWithIndustry(randomIndustry);
+            });
+        }
     }
 }
