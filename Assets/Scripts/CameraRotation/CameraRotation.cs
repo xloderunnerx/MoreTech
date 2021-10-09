@@ -1,3 +1,4 @@
+using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -28,8 +29,6 @@ public class CameraRotation : MonoBehaviour
         if (Input.GetMouseButton(0))
         {
 
-            print("Pressed to Button");
-
             yaw += speedHorizontal * Input.GetAxis("Mouse X");
             //pitch += speedVertical * Input.GetAxis("Mouse Y");
 
@@ -37,5 +36,9 @@ public class CameraRotation : MonoBehaviour
 
         }
 
+    }
+
+    public void DoLookAt(Transform lookTransform) {
+        transform.DOLookAt(lookTransform.position, 0.2f);
     }
 }

@@ -15,23 +15,21 @@ public class DiceScript : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         diceVelocity = rigidBody.velocity;
+    }
 
-        if (Input.GetMouseButtonDown(0)) {
-            DiceNumberTextScript.diceNumber = 0;
-            
-            float dirX = Random.Range(0, 500);
-            float dirY = Random.Range(0, 500);
-            float dirZ = Random.Range(0, 500);
+    public void RollDice() {
+        DiceNumberTextScript.diceNumber = 0;
 
-            transform.position = new Vector3(0, 2, 0);
-            transform.rotation = Quaternion.identity;
+        float dirX = Random.Range(0, 100);
+        float dirY = Random.Range(0, 100);
+        float dirZ = Random.Range(0, 100);
 
-            rigidBody.AddForce(transform.up * 3000);
-            rigidBody.AddTorque(dirX, dirY, dirZ);
-        }
 
+        rigidBody.AddForce(Vector3.up * Random.Range(30, 50), ForceMode.Impulse);
+        rigidBody.AddTorque(dirX, dirY, dirZ, ForceMode.Impulse);
+        diceVelocity = rigidBody.velocity;
     }
 }
