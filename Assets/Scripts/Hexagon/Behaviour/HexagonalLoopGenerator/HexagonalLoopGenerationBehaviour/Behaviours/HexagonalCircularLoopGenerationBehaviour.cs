@@ -29,7 +29,7 @@ namespace Hexagon.Behaviour {
                     var hexRegularPolygon = hexGameObject.GetComponent<RegularPolygon>();
                     var hexRegularPolygonSize = new Vector2(hexRegularPolygon.Radius * 1.75f, hexRegularPolygon.Radius * 1.5f);
                     var hex = hexGameObject.GetComponent<Hex>();
-                    hexTransform.position = new Vector3(x * hexRegularPolygonSize.x + y * hexRegularPolygonSize.x * 0.5f, 0, y * hexRegularPolygonSize.y);
+                    hexTransform.position = new Vector3(x * hexRegularPolygonSize.x + y * hexRegularPolygonSize.x * 0.5f - hexRegularPolygonSize.x * circleRadius * 1.5f, 0, y * hexRegularPolygonSize.y - hexRegularPolygonSize.y * circleRadius);
                     hex.HexagonalPosition = hexagonalPosition;
                     result.Add(hex);
                 }
