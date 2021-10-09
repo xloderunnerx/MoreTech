@@ -22,8 +22,10 @@ namespace Hexagon.Component {
         }
 
         private void Update() {
-            if (Input.GetKeyDown(KeyCode.Alpha1))
+            if (Input.GetKeyDown(KeyCode.Alpha1)) {
+                ClearDestroy();
                 data.loop = Generate();
+            }
         }
 
         public void Init() {
@@ -35,6 +37,11 @@ namespace Hexagon.Component {
             var result = new List<Hex>();
             result = settings.hexagonalLoopGenerationBehaviour.Generate(diContainer, data, settings);
             return result;
+        }
+
+        public void ClearDestroy() {
+            data.loop.ForEach(h => Destroy(h.gameObject));
+            data.loop.Clear();
         }
     }
 }
