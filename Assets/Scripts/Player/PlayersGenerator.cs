@@ -27,6 +27,8 @@ public class PlayersGenerator : SerializedMonoBehaviour
         aiGameObject.transform.localScale *= 0.5f;
         aiGameObject.transform.position = firstHex.transform.position + new Vector3(aiMeshrenderer.bounds.size.x * 0.75f, aiMeshrenderer.bounds.size.y / 2, aiMeshrenderer.bounds.size.z * 0.75f);
         aiGameObject.transform.rotation = Quaternion.Euler(new Vector3(0, Random.Range(0,360), 0));
+        aiPlayer.currentHex = firstHex;
+        aiPlayer.signOffset = 1;
         turnsController.ai = aiPlayer;
 
         var humanGameObject = diContainer.InstantiatePrefab(humanPrefab);
@@ -36,6 +38,8 @@ public class PlayersGenerator : SerializedMonoBehaviour
         humanGameObject.transform.localScale *= 0.5f;
         humanGameObject.transform.position = firstHex.transform.position + new Vector3(-humanMeshRenderer.bounds.size.x * 0.75f, humanMeshRenderer.bounds.size.y / 2, -humanMeshRenderer.bounds.size.z * 0.75f);
         humanGameObject.transform.rotation = Quaternion.Euler(new Vector3(0, Random.Range(0, 360), 0));
+        humanPlayer.currentHex = firstHex;
+        humanPlayer.signOffset = -1;
         turnsController.human = humanPlayer;
         turnsController.current = humanPlayer;
 

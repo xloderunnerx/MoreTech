@@ -41,6 +41,7 @@ namespace Hexagon.Behaviour {
             result.ForEach(h => GameObject.Destroy(h.gameObject));
             result.Clear();
             result = smartRandomizedSortedLoop;
+            SinDisplacement(smartRandomizedSortedLoop);
             return result;
         }
 
@@ -111,6 +112,11 @@ namespace Hexagon.Behaviour {
             return result;
         }
 
+        public void SinDisplacement(List<Hex> loop) {
+            for (int i = 0; i < loop.Count; i++) {
+                loop[i].transform.position += new Vector3(0, Mathf.Sin(i) * 0.2f, 0);
+            }
+        }
         
     }
 }
