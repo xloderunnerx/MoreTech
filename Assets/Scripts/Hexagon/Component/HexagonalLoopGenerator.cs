@@ -13,6 +13,8 @@ namespace Hexagon.Component {
         [OdinSerialize] private HexagonalLoopGeneratorSettings settings;
         [OdinSerialize] private HexagonalLoopGeneratorData data;
 
+        public List<Hex> Loop { get => data.loop; set => data.loop = value; }
+
         private void Awake() {
             Init();
         }
@@ -22,15 +24,17 @@ namespace Hexagon.Component {
         }
 
         private void Update() {
-            if (Input.GetKeyDown(KeyCode.Alpha1)) {
-                ClearDestroy();
-                data.loop = Generate();
-            }
+            
         }
 
         public void Init() {
             if (data == null)
                 data = new HexagonalLoopGeneratorData();
+        }
+
+        public void GenerateVoid() {
+            ClearDestroy();
+            data.loop = Generate();
         }
 
         public List<Hex> Generate() {
