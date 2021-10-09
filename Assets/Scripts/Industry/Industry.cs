@@ -7,6 +7,7 @@ using UnityEngine;
 public class Industry : SerializedScriptableObject
 {
     public string _name;
+    public string description;
     public Sprite sprite;
     public List<Company> companies;
 }

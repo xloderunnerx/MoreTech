@@ -1,6 +1,7 @@
 using DG.Tweening;
 using Hexagon.Component;
 using ModestTree;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,7 +17,7 @@ public class Player : MonoBehaviour
     public int signOffset;
 
 
-    public virtual void StartSteps(int count) {
+    public virtual void StartSteps(int count, Action onStepsCompleted) {
         currentHex.players.Remove(this);
         var meshRenderer = GetComponent<MeshRenderer>();
         var loop = hexagonalLoopGenerator.Loop;
@@ -29,6 +30,7 @@ public class Player : MonoBehaviour
             
             transform.rotation = storedRotation;
         }
+        sequence.OnComplete(() => onStepsCompleted?.Invoke());
         currentHex.players.Add(this);
     }
 
