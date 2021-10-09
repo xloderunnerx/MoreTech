@@ -33,7 +33,7 @@ public class CameraRotation : MonoBehaviour
 
         if (Input.GetMouseButton(0)) {
 
-            yaw += speedHorizontal * Input.GetAxis("Mouse X");
+            yaw += speedHorizontal * -Input.GetAxis("Mouse X");
             //pitch += speedVertical * Input.GetAxis("Mouse Y");
 
             transform.eulerAngles = new Vector3(transform.eulerAngles.x, yaw, transform.eulerAngles.z);

@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cf81353978699e642b0bb65fc4a4dba8, type: 3}
+  m_Name: Avia
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes: []
+  _name: "\u0410\u0432\u0438\u0430\u043A\u043E\u043C\u043F\u0430\u043D\u0438\u0438"
+  sprite: {fileID: 21300000, guid: dc28a4eb77edddb409bb8e04ae5bf635, type: 3}
+  companies:
+  - {fileID: 11400000, guid: 5eca9cb1efa22544499e36323ded551f, type: 2}
+  - {fileID: 11400000, guid: 284904d181f8bfd499463b4306e97dfc, type: 2}
+  - {fileID: 11400000, guid: e5b0f87d7704daa4f93f8ba9d9cf9301, type: 2}

@@ -26,6 +26,7 @@ public class Player : MonoBehaviour
             var storedRotation = transform.rotation;
             transform.rotation = Quaternion.Euler(Vector3.zero);
             sequence.Append(transform.DOJump(currentHex.transform.position + new Vector3(signOffset * meshRenderer.bounds.size.x * 0.75f, meshRenderer.bounds.size.y / 2, signOffset * meshRenderer.bounds.size.z * 0.75f), 0.5f, 1, 0.5f));
+            
             transform.rotation = storedRotation;
         }
         currentHex.players.Add(this);
