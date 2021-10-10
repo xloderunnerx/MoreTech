@@ -24,7 +24,7 @@ MonoBehaviour:
   _name: Electronic Arts
   icon: {fileID: 21300000, guid: 9c5193a8fff1e9a4fb6bde0660f8f091, type: 3}
   haveStocks: 1
-  stocksPrice: 0
+  stocksPrice: 300
   haveBonds: 1
-  bondsPrice: 0
-  bondsPassive: 0
+  bondsPrice: 450
+  bondsPassive: 20
