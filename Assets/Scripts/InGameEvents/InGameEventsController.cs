@@ -9,7 +9,7 @@ public class InGameEventsController : MonoBehaviour
 {
     public InGameEventsList inGameEventsList;
     public List<PlannedEvent> plannedEventsList;
-    public UnityEvent unityEvent;
+    public JournalViewScript journalViewScript;
 
     private void Awake()
     {
@@ -18,8 +18,13 @@ public class InGameEventsController : MonoBehaviour
 
     public void addPlannedEvent() {
 
-        var inGameEventer = inGameEventsList.list[Random.Range(0, inGameEventsList.list.Count)];
         
+
+        var inGameEventer = inGameEventsList.list[Random.Range(0, inGameEventsList.list.Count)];
+
+        journalViewScript.sendDescription(inGameEventer.description);
+        journalViewScript.gameObject.SetActive(true);
+
         plannedEventsList.Add(new PlannedEvent(inGameEventer.description,
                                                inGameEventer.activationTimer,
                                                inGameEventer.company,
@@ -30,7 +35,7 @@ public class InGameEventsController : MonoBehaviour
     {
         plannedEventsList.ForEach(item => { item.activationTimer -= 1; });
 
-        plannedEventsList.Where(item => item.activationTimer <= 0).ToList().ForEach(item => { this.showInfoPanel();
+        plannedEventsList.Where(item => item.activationTimer <= 0).ToList().ForEach(item => {
             item.company.stocksPrice += item.value;
         });
 
@@ -39,7 +44,7 @@ public class InGameEventsController : MonoBehaviour
 
     public void showInfoPanel()
     {
-        unityEvent.Invoke();
+        
     }
 
 }

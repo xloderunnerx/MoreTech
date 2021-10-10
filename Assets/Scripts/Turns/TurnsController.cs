@@ -4,9 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-public interface TurnsControllerDelegate {
-    void endPlayerTurn();
-}
+
 
 public class TurnsController : MonoBehaviour {
     public IndustryInfoPanel industryInfoPanel;
@@ -19,8 +17,6 @@ public class TurnsController : MonoBehaviour {
     public UnityEvent OnAITurnEnd;
     public UnityEvent OnPlayerStepsOver;
     public UnityEvent OnAIStepsOver;
-
-    public TurnsControllerDelegate delegatable;
 
     public void StartCurrentTurn() {
         var stepsCount = diceCheckZoneScript.diceNumber;
@@ -41,7 +37,6 @@ public class TurnsController : MonoBehaviour {
     public void EndPlayerTurn() {
         current = ai;
         OnPlayerTurnEnd?.Invoke();
-        delegatable.endPlayerTurn();
     }
 
     public void EndAITurn() {
