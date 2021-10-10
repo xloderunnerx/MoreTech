@@ -24,7 +24,7 @@ MonoBehaviour:
   _name: "\u0413\u0430\u0437\u043F\u0440\u043E\u043C \u041D\u0435\u0444\u0442\u044C"
   icon: {fileID: 21300000, guid: e37e2c8758f2e0948bf829305b6bab1c, type: 3}
   haveStocks: 1
-  stocksPrice: 0
+  stocksPrice: 200
   haveBonds: 1
-  bondsPrice: 0
-  bondsPassive: 0
+  bondsPrice: 400
+  bondsPassive: 25
