@@ -11,6 +11,7 @@ public class IndustryInfoItem : MonoBehaviour
     public Text companyName;
     public Text typeText;
     public Text price;
+    public Text passive;
     public float rnd;
     public void Init(Company company) {
         this.company = company;
@@ -20,6 +21,7 @@ public class IndustryInfoItem : MonoBehaviour
         if(rnd > 0.5f && company.haveBonds) {
             typeText.text = "Облигация";
             price.text = company.bondsPrice.ToString() + "B";
+            passive.text = "+" + company.bondsPassive.ToString();
         }
         else {
             typeText.text = "Акция";

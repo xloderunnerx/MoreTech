@@ -1990,6 +1990,7 @@ MonoBehaviour:
   companyName: {fileID: 450161529}
   typeText: {fileID: 1357209440}
   price: {fileID: 838186346}
+  passive: {fileID: 530154210}
   rnd: 0
 --- !u!1 &450161527
 GameObject:
@@ -4385,6 +4386,7 @@ MonoBehaviour:
   companyName: {fileID: 1981497285}
   typeText: {fileID: 1305251398}
   price: {fileID: 18624058}
+  passive: {fileID: 44273690}
   rnd: 0
 --- !u!1 &1182580996
 GameObject:
@@ -6960,6 +6962,7 @@ MonoBehaviour:
   companyName: {fileID: 1731987578}
   typeText: {fileID: 507008706}
   price: {fileID: 252914037}
+  passive: {fileID: 52042032}
   rnd: 0
 --- !u!1 &1956415702
 GameObject:
