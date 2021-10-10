@@ -24,7 +24,7 @@ MonoBehaviour:
   _name: S7
   icon: {fileID: 21300000, guid: dc28a4eb77edddb409bb8e04ae5bf635, type: 3}
   haveStocks: 1
-  stocksPrice: 0
+  stocksPrice: 250
   haveBonds: 1
-  bondsPrice: 0
-  bondsPassive: 0
+  bondsPrice: 250
+  bondsPassive: 30
