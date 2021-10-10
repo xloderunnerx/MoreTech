@@ -1,4 +1,5 @@
-﻿using Hexagon.Component;
+﻿using DG.Tweening;
+using Hexagon.Component;
 using Hexagon.Data;
 using Hexagon.SO;
 using Shapes;
@@ -44,7 +45,8 @@ namespace Hexagon.Behaviour {
             result.Clear();
             result = smartRandomizedSortedLoop;
             SinDisplacement(smartRandomizedSortedLoop);
-            AssignIndastries(smartRandomizedSortedLoop); ;
+            AssignIndastries(smartRandomizedSortedLoop);
+            FadeLoopAnimation(smartRandomizedSortedLoop);
             return result;
         }
 
@@ -126,6 +128,16 @@ namespace Hexagon.Behaviour {
                 var randomIndustry = industryList.Industries[Random.Range(0, industryList.Industries.Count)];
                 h.InitWithIndustry(randomIndustry);
             });
+        }
+
+        public void FadeLoopAnimation(List<Hex> loop) {
+            loop.ForEach(h => h.regularPolygonGraphics.transform.position += new Vector3(0, -15, 0));
+            Sequence sequence = DOTween.Sequence();
+            for(int i = 0; i < loop.Count; i++) {
+                var currentHex = loop[i];
+                sequence.Join(currentHex.regularPolygonGraphics.transform.DOMove(currentHex.transform.position, 0.1f * (float)(i+1)).OnComplete(() => { 
+                    currentHex.industryIcon.transform.DOScale(new Vector3(2.5f, 2.5f, 1), 0.2f).OnComplete(() => currentHex.industryIcon.transform.DOScale(new Vector3(2f, 2f, 1), 0.2f)); }));
+            }
         }
     }
 }

@@ -1,4 +1,5 @@
 using Hexagon.Data;
+using Shapes;
 using Sirenix.OdinInspector;
 using Sirenix.Serialization;
 using System.Collections;
@@ -12,6 +13,7 @@ namespace Hexagon.Component {
         public Industry industry;
         public SpriteRenderer industryIcon;
         public Camera _camera;
+        public RegularPolygon regularPolygonGraphics;
         public VectorHexagonal HexagonalPosition { get => data.hexagonalPosition; set => data.hexagonalPosition = value; }
 
         private void Awake() {
